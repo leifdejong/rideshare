@@ -1,0 +1,87 @@
+/*
+ * Filename: responsive.css
+ * Author(s): Leif DeJong
+ * Created: Mar 6, 2013
+ *
+ * Table of Contents: 
+ *    1) Max Width: 768
+ *    2) Min Width: 768px and Max Width: 1200px
+ *    3) Max Width: 500px
+ *    4) Max Width: 1200px
+ */
+
+/* 1) Max Width: 768px
+=============================================== */
+@media (max-width: 768px) {
+  .content {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  .header .header-inner .aux-buttons {
+    margin-top: -40px;
+  }
+  
+  /* Top Navigation Switch */
+  .navigation {
+    border: 1px solid #D1D1D1;
+    right: 0;
+    margin-left: 0;
+    margin-bottom: 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  .navigation-inner ul li.active a {
+    background-image: none;
+    margin-right: 0;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-right-radius: 5px;
+  }
+  .navigation-inner ul li.active a:hover {
+    background-image: none;
+  }
+  .navigation-inner ul li:first-child a:hover {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .navigation-inner ul li:last-child a:hover {
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+
+/* 2) Min Width: 768px and Max Width: 1200px
+=============================================== */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .navigation {
+    right: -19px;
+  }
+}
+
+/* 3) Max Width: 500px
+=============================================== */
+@media (max-width: 500px) {
+  /* Allows elements to disappear in this responsive mode */
+  .disappear {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+/* 4) Max Width: 1200px
+=============================================== */
+@media (max-width: 1200px) {
+  #chk-all {
+    margin-left: 30px;
+  }
+}

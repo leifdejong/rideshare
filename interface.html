@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ShareRides</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheets
+    ================================================== -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    
+    <link href="css/footable-0.1.css" rel="stylesheet" type="text/css" />
+    <link href="css/footable.sortable-0.1.css" rel="stylesheet" type="text/css" />
+    
+    <link href="css/datetimepicker.css" rel="stylesheet" type="text/css" />
+    
+    <link href="css/bootstrap-modal.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Icons
+    ================================================== -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="icons/favicon.png">
+  </head>
+
+  <body>
+      
+    <!-- Header
+    ================================================== -->
+    <div class="header">
+      <div class="header-inner container">
+        <div class="row-fluid">
+          <div class="span6">
+            <div class="header-logo">
+              <a href="interface.html" title="Home URL">
+                <h1>RideShare</h1>
+              </a>
+            </div><!-- /.header-logo -->
+          </div><!-- /.span6 -->
+          <div class="span6">
+            <div class="aux-buttons btn-group pull-right">
+              <a href="#rideHelp" class="btn btn-primary" data-toggle="modal"><i class="icon-question-sign icon-white"></i> <span class="disappear">Help</span></a>
+              <a href="#confirmLogout" class="btn" data-toggle="modal"><i class="icon-lock"></i> <span class="disappear">Logout</span></a>
+            </div><!-- /.aux-buttons -->
+          </div><!-- /.span6 -->
+        </div><!-- /.row-fluid -->
+      </div><!-- /.header-inner -->
+    </div><!-- /.header -->
+      
+    <!-- Content Wrap
+    ================================================== -->
+    <div class="content-wrap">
+      <div class="container">
+        <div class="row-fluid">
+          
+          <!-- Navigation - Tab Controller
+          ================================================== -->
+          <div class="span2">
+            <div class="navigation">
+              <div class="navigation-inner">
+                <ul class="nav nav-tabs" id="rideTab">
+                  <li class="active"><a href="#home"><i class="icon-home"></i> Home</a></li>
+                  <li><a href="#passenger"><i class="icon-user"></i> <strong>Get</strong> A Ride</a></li>
+                  <li><a href="#driver"><i class="icon-road"></i> <strong>Give</strong> A Ride</a></li>
+                </ul>
+               </div><!-- /.navigation -->
+            </div><!-- /.navigation-container -->
+          </div><!-- /.span2 -->
+          
+          <!-- Content
+          ================================================== -->
+          <div class="span10">
+            <div class="content">
+              <div class="tab-content">
+              
+                <!-- Home Tab
+                ================================================== -->
+                <div class="home-tab tab-pane active" id="home">
+                  <div class="row-fluid">
+                  
+                    <!-- User Information -->
+                    <div class="span2">
+                      <div class="user-image">
+                        <img src="images/profile.png" alt="Profile Picture" />
+                      </div><!-- /.user-image -->
+                      <div class="user-welcome">
+                        <span class="welcome"> Welcome:</span><span class="user-name"> User</span>
+                      </div><!-- /.user-welcome -->
+                    </div><!-- /.span2 -->
+                    
+                    <!-- Home Content -->
+                    <div class="span10">
+                    
+                    <div class="alert">
+                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                      <strong>New Request:</strong> Someone has requested to join a ride. <a href="#rideDetailD" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a>
+                    </div>
+                      
+                      <!-- Upcoming Rides -->
+                      <div class="upcoming-rides">Upcoming Rides</div>
+                      <table class="footable rideTable">
+                        <thead>
+                          <tr>
+                            <th data-class="expand" data-type="numeric" data-sort-initial="true">
+                              When
+                            </th>
+                            <th>
+                              To
+                            </th>
+                            <th data-hide="phone">
+                              From
+                            </th>
+                            <th data-hide="phone,tablet">
+                              Driver
+                            </th>
+                            <th data-hide="phone,tablet" data-sort-ignore="true">
+                              Options
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td data-value="-2191536000">July 22</td><td>Boston, MA</td><td>Richmond, IN</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">You :-)</a></td><td><a href="#rideDetailD" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td>
+                          </tr> 
+                          <tr>
+                            <td data-value="-2191536000">July 22</td><td>Boston, MA</td><td>Richmond, IN</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Mark P</a></td><td><a href="#rideDetailP" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td>
+                          </tr>  
+                        </tbody>
+                      </table>
+                      
+                      <!--<div class="no-ride"><em><i class="icon-exclamation-sign"></i> You have no upcoming drives.</em></div>-->                   
+                      <!-- Outstanding Requests -->
+                      <div class="outstanding-requests">Outstanding Requests</div>
+                                            
+                      <table class="footable rideTable">
+                        <thead>
+                          <tr>
+                            <th>
+                              To
+                            </th>
+                            <th data-class="expand" >
+                              From
+                            </th>
+                            <th data-hide="phone" data-type="numeric" data-sort-initial="true">
+                              When
+                            </th>
+                            <th data-hide="phone,tablet" data-sort-ignore="true">
+                              Options
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>Richmond, IN</td><td>Boston, MA</td><td data-value="-2191536000">July 22</td><td><a href="#requestDetailR" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Request</a></td>
+                          </tr>  
+                         
+                        </tbody>
+                      </table>
+                      
+                    </div><!-- /.span10 -->
+                  </div><!-- /.row-fluid -->
+                </div><!-- /.home-tab -->
+                
+                <!-- Passenger Tab
+                ================================================== -->
+                <div class="passenger-tab tab-pane" id="passenger">
+              
+                  <div class="row-fluid">
+                  
+                    <!-- Passenger Control -->
+                    <div class="span4">
+                      <div class="passenger-control btn-group pull-left">
+                        <a href="#confirm" role="button" class="btn btn-primary disabled chk-toggle" data-toggle="modal"><i class="icon-briefcase icon-white"></i> Join Ride</a>
+                        <a href="#rideRequest" role="button" class="btn" data-toggle="modal"><i class="icon-map-marker"></i> Request Ride</a>
+                        <button role="button" class="btn refresh"><i class="icon-refresh"></i><span class="disappear"> Refresh</span></button>
+                      </div><!-- /.passenger-control -->
+                    </div><!-- /.span4 -->
+                    
+                    <div class="span4"></div><!-- /.span4 -->
+                    
+                    <!-- Table Filter -->
+                    <div class="span4">
+                      <input class="search pull-right" id="rideFilter" type="text" placeholder="Search Rides" />
+                    </div><!-- /.span4 -->
+                    
+                  </div><!-- /.row-fluid -->
+                  
+                  <!-- Ride Table -->
+                  <table class="ride-table footable" data-filter="#rideFilter">
+                    <thead>
+                      <tr>
+                        <th data-class="expand" data-sort-ignore="true">
+                          Select
+                        </th>
+                        <th  data-type="numeric" data-sort-initial="true">
+                          When
+                        </th>
+                        <th>
+                          To
+                        </th>
+                        <th data-hide="phone">
+                          From
+                        </th>
+                        <th data-hide="phone,tablet">
+                          Driver
+                        </th>
+                        <th data-hide="phone,tablet" data-sort-ignore="true">
+                          Seats
+                        </th>
+                        <th data-hide="phone,tablet" data-sort-ignore="true">
+                          Options
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      
+                      <td><input type="radio" name="rdo" /></td><td data-value="-2191536000">July 22</td><td>Boston, MA</td><td>Richmond, IN</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Leif D</a></td><td data-value="suspended"><span class="badge badge-important">1</span></td><td><a href="#rideDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td></tr>
+                      
+                      <td><input type="radio" name="rdo" /></td><td data-value="-2183068800">October 28</td><td>Richmond, IN</td><td>Memphis, TN</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Mark P</a></td><td data-value="suspended"><span class="badge badge-success">4</span></td><td><a href="#rideDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td></tr>
+                      
+                      <td><input type="radio" name="rdo" /></td><td data-value="-2199657600">April 19</td><td>Minneapolis, MN</td><td>Richmond, IN</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Aaron T</a></td><td data-value="suspended"><span class="badge badge-warning">2</span></td><td><a href="#rideDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td></tr>
+                      
+                     <td><input type="radio" name="rdo" /></td><td data-value="-2179094400">December 13</td><td>Richmond, IN</td><td>Los Angeles, CA</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Mary C</a></td><td data-value="suspended"><span class="badge badge-success">3</span></td><td><a href="#rideDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td></tr>
+                      
+                      <td><input type="radio" name="rdo" /></td><td data-value="-2198793600">April 29</td><td>Orange City, IA</td><td>Richmond, IN</td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Emma W</a></td><td data-value="suspended"><span class="badge badge-important">1</span></td><td><a href="#rideDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Ride</a></td></tr>
+                      
+                     
+                    </tbody>
+                  </table>
+                  
+                </div><!-- /.passenger-tab -->
+                
+                <!-- Driver Tab
+                ================================================== -->
+                <div class="driver-tab tab-pane" id="driver">
+                  <div class="row-fluid">
+                  
+                    <!-- Driver Control -->
+                    <div class="span4">
+                      <div class="driver-control btn-group pull-left">
+                        <a href="#drive" role="button" class="btn btn-primary disabled chk-toggle" data-toggle="modal"><i class="icon-road icon-white"></i> Drive</a>
+                        <a href="#addRide" role="button" class="btn pull right" data-toggle="modal"><i class="icon-plus"></i> New Ride</a>
+                        <button role="button" class="btn refresh"><i class="icon-refresh"></i><span class="disappear"> Refresh</span></button>
+                      </div><!-- /.driver-control -->
+                    </div><!-- /.span4 -->
+                                        
+                    <div class="span4"></div><!-- /.span4 -->
+                  
+                    <!-- Table Filter -->
+                    <div class="span4">
+                      <input class="search pull-right" id="requestFilter" type="text" placeholder="Search Requests" />
+                    </div><!-- /.span4 -->
+
+                    
+                  </div><!-- /.row-fluid -->
+                  
+                  <!-- Request Table -->
+                  <table class="request-table footable" data-filter="#requestFilter">
+                    <thead>
+                      <tr>
+                        <th data-class="expand" data-sort-ignore="true">
+                          Select
+                        </th>
+                        <th>
+                          Requestee
+                        </th>
+                        <th>
+                          To
+                        </th>
+                        <th data-hide="phone">
+                          From
+                        </th>
+                        <th data-hide="phone" data-type="numeric" data-sort-initial="true">
+                          When
+                        </th>
+                        <th data-hide="phone,tablet" data-sort-ignore="true">
+                          Options
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                      
+                      <td><input type="checkbox" class="chk"></td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Leif D</a></td><td>Boston, MA</td><td>Richmond, IN</td><td data-value="-2191536000">July 22</td><td><a href="#requestDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Request</a></td></tr>
+                      
+                      <td><input type="checkbox" class="chk"></td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Mark P</a></td><td>Richmond, IN</td><td>Memphis, TN</td><td data-value="-2183068800">October 28</td><td><a href="#requestDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Request</a></td></tr>
+                      
+                      <td><input type="checkbox" class="chk"></td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Aaron T</a></td><td>Minneapolis, MN</td><td>Richmond, IN</td><td data-value="-2199657600">April 19</td><td><a href="#requestDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Request</a></td></tr>
+                      
+                      <td><input type="checkbox" class="chk"></td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Mary C</a></td><td>Richmond, IN</td><td>Los Angeles, CA</td><td data-value="-2179094400">December 13</td><td><a href="#requestDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Request</a></td></tr>
+                      
+                     <td><input type="checkbox" class="chk"></td><td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Emma W</a></td><td>Orange City, IA</td><td>Richmond, IN</td><td data-value="-2198793600">April 29</td><td><a href="#requestDetail" class="btn btn-block" data-toggle="modal"><i class="icon-info-sign"></i> View Request</a></td></tr>
+                      
+                     
+                    </tbody>
+                  </table>
+  
+                </div><!-- /.driver-tab -->
+                
+              </div><!-- /.tab-content -->
+            </div> <!-- /.content -->
+          </div><!-- /.span9 -->
+          
+        </div><!-- /.row-fluid -->
+      </div><!-- /.container -->
+    </div><!-- /.content-wrap -->
+    
+    <!-- Footer
+    ================================================== -->
+    <div class="footer">
+      <div class="container">
+        <div class="footer-inner">          
+          <p class="site-copywrite">&copy; ShareRides 2013</p>
+        </div><!-- /.footer-inner -->
+      </div><!-- /.container -->
+    </div>
+
+    <!-- Modals
+    ================================================== -->
+    
+    <!-- Ride Help -->
+    <div id="rideHelp" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="rideHelpLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="rideHelpLabel">RideShare Help</h3>
+      </div>
+      <div class="modal-body">
+        These are the help pages
+      </div>
+    </div>
+    
+    
+    <!-- Confirm Logout -->
+    <div id="confirmLogout" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="confirmLogoutLabel" aria-hidden="true">
+
+      <div class="modal-body">
+        
+          <div class="row-fluid">
+            <div class="span10">
+              Are you sure you want to logout?
+            </div><!-- ./span10 -->
+            <div class="span2">
+               <div class="btn-group pull-right">
+                 <a href="index.html" class="btn btn-primary"><i class="icon-ok icon-white"></i> Yes</a>
+                 <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> No</button>
+               </div><!-- ./btn-group -->
+            </div><!-- ./span2 -->
+          </div><!-- ./row-fluid -->
+      
+      </div>
+    </div>
+    
+    <!-- Ride Request -->
+    <div id="rideRequest" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="rideRequestLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="rideRequestLabel">Add a Ride Form</h3>
+      </div>
+      <div class="modal-body">
+        <form>
+          <fieldset>
+            <div class="control-group">
+               <label>To</label>
+               <div class="controls">
+                 <input type="text" class="input-block-level" placeholder="ie: Minneapolis, MN" required />
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+               <label>From</label>
+               <div class="controls">
+                 <input type="text" class="input-block-level" placeholder="ie: Richmond, IN" required />
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+               <label>When</label>
+               <div class="controls">
+                 <div class="input-append date ride_datetime" data-date="2013-02-21T15:25:00Z">
+                   <input type="text" value="" class="input-block-level" readonly required />
+                   <span class="add-on"><i class="icon-remove"></i></span>
+                   <span class="add-on"><i class="icon-calendar"></i></span>
+                  </div> 
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+               <label>Description (Optional)</label>
+               <div class="controls">
+                 <textarea rows="5" class="input-block-level"></textarea>
+                 <p class="help-block"></p>
+               </div>
+             </div>
+          </fieldset>
+          <div class="form-actions">
+            <div class="btn-group pull-right">
+              <button class="btn btn-primary" type="submit"><i class="icon-ok icon-white"></i> Add Request</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
+            </div>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    
+    <!-- Add Ride -->
+    <div id="addRide" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addRideLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="addRideLabel">Add a Ride Form</h3>
+      </div>
+      <div class="modal-body">
+        <form>
+          <fieldset>
+            <div class="control-group">
+               <label>To</label>
+               <div class="controls">
+                 <input type="text" class="input-block-level" placeholder="ie: Minneapolis, MN" required />
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+               <label>From</label>
+               <div class="controls">
+                 <input type="text" class="input-block-level" placeholder="ie: Richmond, IN" required />
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+               <label>When</label>
+               <div class="controls">
+                 <div class="input-append date ride_datetime" data-date="2013-02-21T15:25:00Z">
+                   <input type="text" value="" class="input-block-level" readonly required />
+                   <span class="add-on"><i class="icon-remove"></i></span>
+                   <span class="add-on"><i class="icon-calendar"></i></span>
+                  </div> 
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+              <label class="checkbox">
+                <input type="checkbox"> Flexible Location
+              </label>
+             </div>
+             <div class="control-group">
+              <label class="checkbox">
+                <input type="checkbox"> Flexible Date
+              </label>
+             </div>
+             <div class="control-group">
+               <label>Seats Available</label>
+               <div class="controls">
+                 <input type="number" class="input-block-level" placeholder="ie: 1" required />
+                 <p class="help-block"></p>
+               </div>
+             </div>
+             <div class="control-group">
+               <label>Description (Optional)</label>
+               <div class="controls">
+                 <textarea rows="5" class="input-block-level"></textarea>
+                 <p class="help-block"></p>
+               </div>
+             </div>
+          </fieldset>
+          <div class="form-actions">
+            <div class="btn-group pull-right">
+              <button class="btn btn-primary" type="submit"><i class="icon-ok icon-white"></i> Add Ride</button>
+              <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> Cancel</button>
+            </div>
+          </div>
+        </form>
+        
+      </div>
+    </div>
+    
+    <!-- Ride Detail -->
+    <div id="rideDetail" class="modal container hide fade" tabindex="-1" role="dialog" aria-labelledby="rideDetailLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="rideDetailLabel">Ride Details</h3>
+      </div>
+      <div class="modal-body">
+        <div class="row-fluid">
+          <strong>To</strong>: Minneapolis, MN <br />
+          <strong>From</strong>: Richmond, IN <br />
+          <strong>When</strong>: April 19, 2013 at 14:00 <br />
+          <strong>Driver</strong>: Leif D - (leifdejong@gmail.com)<br />
+          <strong>Seats Available</strong>: <span class="badge badge-warning">2</span>  <br />
+          <strong>Description</strong>: I will be charging $30 for a ride. Hope that works. Hit me up on the "discussion" below to talk. <br />
+          <strong>Discussion</strong>:
+        </div><!-- ./row-fluid -->
+        
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-primary" data-dismiss="modal"><i class="icon-briefcase icon-white"></i> Join Ride</a>
+          <button class="btn" data-dismiss="modal"><i class="icon-remove"></i> Close</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Ride Detail - Role Passenger-->
+    <div id="rideDetailP" class="modal container hide fade" tabindex="-1" role="dialog" aria-labelledby="rideDetailLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="rideDetailLabel">Ride Details</h3>
+      </div>
+      <div class="modal-body">
+        <div class="row-fluid">
+          <strong>To</strong>: Minneapolis, MN <br />
+          <strong>From</strong>: Richmond, IN <br />
+          <strong>When</strong>: April 19, 2013 at 14:00 <br />
+          <strong>Driver</strong>: Leif D - (leifdejong@gmail.com)<br />
+          <strong>Seats Available</strong>: <span class="badge badge-warning">2</span>  <br />
+          <strong>Description</strong>: I will be charging $30 for a ride. Hope that works. Hit me up on the "discussion" below to talk. <br />
+          <strong>Discussion</strong>:<br />
+          <strong>Passenger</strong>:<br /><br />
+          <table class="table table-condensed table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Joined</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Spiggy Topes</a></td>
+              <td>n/a</td>
+              <td>Hey man, can I get a ride anywhere?</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Angela Merkel</a></td>
+              <td>Feb 29 2013</td>
+              <td>Wie gehts?</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Nikola Sarkosi</a></td>
+              <td>Feb 29 2013</td>
+              <td>Pourqoi?</td>
+            </tr>
+          </tbody>
+          </table>
+        </div><!-- ./row-fluid -->
+        
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-danger" data-dismiss="modal"><i class="icon-remove icon-white"></i> Leave Ride</a>
+          <button class="btn" data-dismiss="modal"><i class="icon-remove"></i> Close</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- Ride Detail - Role Driver-->
+    <div id="rideDetailD" class="modal container hide fade" tabindex="-1" role="dialog" aria-labelledby="rideDetailLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="rideDetailLabel">Ride Details</h3>
+      </div>
+      <div class="modal-body">
+        <div class="row-fluid">
+          <strong>To</strong>: Minneapolis, MN <br />
+          <strong>From</strong>: Richmond, IN <br />
+          <strong>When</strong>: April 19, 2013 at 14:00 <br />
+          <strong>Driver</strong>: Leif D - (leifdejong@gmail.com)<br />
+          <strong>Seats Available</strong>: <span class="badge badge-warning">2</span>  <br />
+          <strong>Description</strong>: I will be charging $30 for a ride. Hope that works. Hit me up on the "discussion" below to talk. <br />
+          <strong>Discussion</strong>:<br />
+          <strong>Passengers</stong>:<br /><br />
+          <table class="table table-condensed table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Joined</th>
+              <th>Message</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="warning">
+              <td>1</td>
+              <td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Spiggy Topes</a></td>
+              <td>n/a</td>
+              <td>Hey man, can I get a ride anywhere?</td>
+              <td><div class="btn-group"><button class="btn btn-success"><i class="icon-ok icon-white"></i> Accept</button><button class="btn btn-danger"><i class="icon-remove icon-white"></i> Refuse</button></div></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Angela Merkel</a></td>
+              <td>Feb 29 2013</td>
+              <td>Wie gehts?</td>
+              <td><div class="btn-group"><button class="btn btn-danger"><i class="icon-remove icon-white"></i> Remove</button></div></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><a title="" class="pop" data-content="<img src='images/profile.png' class='user-view' />" data-placement="top" data-toggle="popover" href="#" data-original-title="Username">Nikola Sarkosi</a></td>
+              <td>Feb 29 2013</td>
+              <td>Pourqoi?</td>
+              <td><div class="btn-group"><button class="btn btn-danger"><i class="icon-remove icon-white"></i> Remove</button></div></td>
+            </tr>
+          </tbody>
+          </table>
+        </div><!-- ./row-fluid -->
+        
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn" data-dismiss="modal"><i class="icon-pencil"></i> Edit Ride</button>
+          <button class="btn" data-dismiss="modal"><i class="icon-remove"></i> Delete Ride</button>
+          <button class="btn" data-dismiss="modal"><i class="icon-remove"></i> Close</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Request Detail -->
+    <div id="requestDetail" class="modal container hide fade" tabindex="-1" role="dialog" aria-labelledby="requestDetailLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="requestDetailLabel">Request Details</h3>
+      </div>
+      <div class="modal-body">
+        <strong>To</strong>: Minneapolis, MN <br />
+        <strong>From</strong>: Richmond, IN <br />
+        <strong>When</strong>: April 19, 2013 at 14:00 <br />
+        <strong>Requestee</strong>: Mark P - (markp@gmail.com)<br />
+        <strong>Description</strong>: I am willing to pay for gas and buy a lunch on the way :-) <br />
+        <strong>Discussion</strong>:
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <button class="btn btn-primary" data-dismiss="modal"><i class="icon-road icon-white"></i> Drive Requestee</a>
+          <button class="btn" data-dismiss="modal"><i class="icon-remove"></i> Close</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Request Detail - Role Requestee -->
+    <div id="requestDetailR" class="modal container hide fade" tabindex="-1" role="dialog" aria-labelledby="requestDetailLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="requestDetailLabel">Request Details</h3>
+      </div>
+      <div class="modal-body">
+        <strong>To</strong>: Minneapolis, MN <br />
+        <strong>From</strong>: Richmond, IN <br />
+        <strong>When</strong>: April 19, 2013 at 14:00 <br />
+        <strong>Requestee</strong>: Mark P - (markp@gmail.com)<br />
+        <strong>Description</strong>: I am willing to pay for gas and buy a lunch on the way :-) <br />
+        <strong>Discussion</strong>:
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group">
+          <a href="#confirm" role="button" class="btn btn-danger" data-toggle="modal"><i class="icon-remove icon-white"></i> Delete Request</a>
+          <button class="btn" data-dismiss="modal"><i class="icon-remove"></i> Close</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- User Profile -->
+    <div id="userProfile" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="userProfileLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="userProfileLabel">User Profile</h3>
+      </div>
+      <div class="modal-body">
+
+        
+      </div>
+    </div>
+    
+    <!-- User Settings -->
+    <div id="userSettings" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="userSettingsLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="userSettingsLabel">User Settings</h3>
+      </div>
+      <div class="modal-body">
+
+        
+      </div>
+    </div>
+    
+    <!-- Drive -->
+    <div id="drive" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="driveLabel" aria-hidden="true">
+      <div class="modal-body">
+          <div class="row-fluid">
+            <div class="span10">
+              Are you sure you want to drive this/these requestee(s)?
+            </div><!-- ./span10 -->
+            <div class="span2">
+               <div class="btn-group pull-right">
+                 <a href="#" data-dismiss="modal" class="btn btn-primary refresh"><i class="icon-ok icon-white"></i> Yes</a>
+                 <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> No</button>
+               </div><!-- ./btn-group -->
+            </div><!-- ./span2 -->
+          </div><!-- ./row-fluid -->
+      
+      </div>
+    </div>
+    
+   <!-- Join Ride -->
+    <div id="confirm" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="confirmLogoutLabel" aria-hidden="true">
+
+      <div class="modal-body">
+          <div class="row-fluid">
+            <div class="span10">
+              Are you sure you want to do this?
+            </div><!-- ./span10 -->
+            <div class="span2">
+               <div class="btn-group pull-right">
+                 <a href="#" data-dismiss="modal" class="btn btn-primary refresh"><i class="icon-ok icon-white"></i> Yes</a>
+                 <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i> No</button>
+               </div><!-- ./btn-group -->
+            </div><!-- ./span2 -->
+          </div><!-- ./row-fluid -->
+      
+      </div>
+    </div>
+    
+    <!-- The javascript
+    ================================================== -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/footable-0.1.js" type="text/javascript"></script>
+    <script src="js/footable.sortable.js" type="text/javascript"></script>
+    <script src="js/footable.filter.js" type="text/javascript"></script>
+    <script src="js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-form-validator.js" type="text/javascript"></script>
+    <script src="js/bootstrap-modalmanager.js" type="text/javascript"></script>
+    <script src="js/bootstrap-modal.js" type="text/javascript"></script>
+    <script type="text/javascript">   
+      
+      $('#rideTab a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+      })
+      
+      $('body').modalmanager();
+      
+      $('table').footable();
+      
+      $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+      
+      $(".ride_datetime").datetimepicker({
+         format: "dd MM yyyy - hh:ii",
+         autoclose: true,
+         todayBtn: true,
+         startDate: "",
+         minuteStep: 10,
+         pickerPosition: "bottom-left",
+         todayHighlight: true
+      });
+      
+      $('.pop').popover({
+        html: true,
+        trigger: "hover"
+      });	
+      
+      // Reset Onload
+      $(document).ready(function() {
+        $('input').prop('checked',false);
+        $('.chk-toggle').attr("data-toggle", "false");
+      });
+      
+      // Refresh Table Button
+      $('.refresh').click(function() {
+        $('input[type=checkbox]').prop('checked',false);
+        $('input[type=radio]').prop('checked',false);
+        $('.chk-toggle').attr("data-toggle", "false");
+        $('.chk-toggle').addClass("disabled");
+      });
+
+      // Toggle Checkboxes in Table - (Disabled!)
+      // <input type="checkbox" id="chk-all" />
+      $('#chk-all').click (function () {
+        var checkedStatus = this.checked;
+        $('.request-table tbody tr').find('td:first :checkbox').each(function () {
+          $(this).prop('checked', checkedStatus);
+        });
+      });
+      
+      // If Checkbox, then enable button 
+      $('.request-table :checkbox').click(function() {
+        var checkedStatus = $('.request-table input:checked').length > 0;
+        if (checkedStatus) {
+          $('.chk-toggle').removeClass("disabled");
+          $('.chk-toggle').attr("data-toggle", "modal");
+        } else {
+          $('.chk-toggle').addClass("disabled");
+          $('.chk-toggle').attr("data-toggle", "false");
+        }
+      });
+      
+      // If Radio, then enable button 
+      $('.ride-table :radio').click(function() {
+        var checkedStatus = $('.ride-table input:checked').length > 0;
+        if (checkedStatus) {
+          $('.chk-toggle').removeClass("disabled");
+          $('.chk-toggle').attr("data-toggle", "modal");
+        } else {
+          $('.chk-toggle').addClass("disabled");
+          $('.chk-toggle').attr("data-toggle", "false");
+        }
+      });
+      
+      // Close all modals on refresh
+      $('.refresh').click(function() {
+        $('.modal').modal('hide');
+      });
+      
+    </script>
+  </body>
+</html>

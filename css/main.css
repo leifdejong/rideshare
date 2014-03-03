@@ -1,0 +1,247 @@
+/*
+ * Filename: main.css
+ * Author(s): Leif DeJong
+ * Created: Mar 6, 2013
+ *
+ * Table of Contents: 
+ *    1) Defaults
+ *    2) Typography
+ *    3) Header
+ *    4) Content Wrapper
+ *    5) Bootstrap Tabs Override
+ *    6) Navigation
+ *    7) Tab Content Area
+ *      a) - Home Tab
+ *      b) - Passenger Tab
+ *      c) - Driver Tab
+ *    8) User View - Popover
+ *    9) Footer
+ */
+ 
+/* 1) Defaults
+=============================================== */
+body {
+  background: #f1f1f1;
+}
+
+/* 2) Typography
+=============================================== */
+
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+p {}
+img {}
+blockquote {}
+ul {}
+ul li {}
+ol {}
+ol li {}
+ 
+/* 3) Header
+=============================================== */
+.header {}
+.header .header-inner {}
+.header .header-inner .header-logo {
+  margin-top: 35px;
+}
+.header .header-inner .header-logo a {
+  text-decoration: none;
+  color: #555;
+}
+.header .header-inner .aux-buttons {
+  margin: 40px 0;
+}
+
+ 
+/* 4) Content Wrapper - (Not Contained)
+=============================================== */
+.content-wrap {}
+
+/* 5) Bootstrap Tabs Override
+=============================================== */
+.navigation .nav-tabs > li {
+  margin: 0;
+}
+.navigation .nav-tabs > li > a {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  border: none;
+}
+.navigation .nav-tabs > .active > a,.nav-tabs > .active > a:hover,.nav-tabs > .active > a:focus {
+  border: none;
+}
+.navigation .nav-tabs > li,.nav-pills > li {
+  float: none;
+}
+
+/* 6) Navigation
+=============================================== */
+.navigation {
+  background: #F5F5F5;
+  border-color: #D1D1D1;
+  border-image: none;
+  border-style: solid none solid solid;
+  border-width: 1px 0 1px 1px;
+  margin-right: -1px;
+  margin-left: -29px;
+  position: relative;
+  right: -29px;
+  z-index: 100;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.navigation-inner {
+  clear: both;
+  position: relative !important;
+}
+.navigation-inner ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+.navigation-inner ul li {
+  clear: both;
+  margin: 0;
+}
+.navigation-inner ul li a {
+  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #FFF;
+  color: #777;
+  display: block;
+  font: 13px/50px Arial,Helvetica,sans-serif;
+  height: 48px;
+  margin: 0;
+  outline: medium none;
+  position: relative;
+  text-decoration: none;
+  text-indent: 20px;
+}
+.navigation-inner ul li a:hover {
+  background: #fff;
+  color: #000;
+}
+.navigation-inner ul li.active a {
+  background: url('images/arrow_right.png') no-repeat scroll right 0 #FFF;
+  margin-right: -1px;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+}
+.navigation-inner ul li.active a:hover {
+  background: url('images/arrow_right.png') no-repeat scroll right 0 #FFF;
+}
+.navigation-inner ul li:last-child > a {
+  border-bottom: none;
+}
+.navigation-inner ul li:first-child a:hover {
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+}
+.navigation-inner ul li:last-child a:hover {
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* 7) Tab Content Area
+=============================================== */
+.content {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  z-index: 5;
+  border: 1px solid #D1D1D1;
+  -webkit-border-radius: 5px;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius: 5px;
+  -moz-border-radius-topleft: 0;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
+  -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
+  box-shadow: 0 0 3px 0 rgba(0,0,0,.1);
+}
+
+/* a) - Home Tab
+=============================================== */
+.content .home-tab .footable {
+  margin-bottom: 20px;
+}
+.content .home-tab {}
+.content .home-tab .user-image {}
+.content .home-tab .user-image img {
+  margin: 0 auto;
+  display: block;
+}
+.content .home-tab .user-welcome {
+  text-align: center;
+}
+.content .home-tab .user-welcome .welcome {
+  font-weight: bold;
+}
+.content .home-tab .user-welcome .user-name {}
+.content .home-tab .upcoming-rides {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #545;
+  border-bottom: 2px solid #545;
+  margin-bottom: 20px;
+}
+.content .home-tab .upcoming-drives {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #545;
+  border-bottom: 2px solid #545;
+  margin-bottom: 20px;
+}
+.content .home-tab .outstanding-requests {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #545;
+  border-bottom: 2px solid #545;
+  margin-bottom: 20px;
+}
+.content .home-tab .no-ride {
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+/* b) - Passenger Tab
+=============================================== */
+.content .passenger-tab {}
+.content .passenger-tab .search {}
+.content .passenger-tab .passenger-control {}
+.content .passenger-tab .ride-table {}
+
+/* c) - Driver Tab
+=============================================== */
+.content .driver-tab {}
+.content .driver-tab .search {}
+.content .driver-tab .driver-control {}
+.content .driver-tab .request-table {}
+
+/* 8) User View - Popover
+=============================================== */
+.user-view {
+  display: block;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+/* 9) Footer
+=============================================== */
+.footer {}
+.footer .footer-inner{}
+.footer .footer-inner .site-copywrite{
+  text-align: right;
+}
